@@ -1,6 +1,11 @@
 # Pipestalk
 
-TODO: Write a gem description
+Pipestalk is a thin layer over
+[beaneater](https://github.com/beanstalkd/beaneater) that uses beanstalkd
+queues to define I/O streams and data-processing filters and compose them
+in a UNIX-y way, for simple inter-component messaging.
+
+Pipestalk is still very alpha.
 
 ## Installation
 
