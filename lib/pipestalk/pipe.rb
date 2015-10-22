@@ -13,7 +13,7 @@ module Pipestalk
 
     attr_reader :name, :connection, :tube
 
-    def initialize(name, connection)
+    def initialize(name, connection=nil)
       @name = name
       @connection = connection || Pipestalk.connection
       @connection.pipes[name] = self
@@ -35,9 +35,9 @@ module Pipestalk
     alias_method :<<, :put
 
     def connect(*others) #:yield:#
-      connection.jobs.register(@name) do |job|
+      connection.jobs.register(qualified_name) do |job|
         record = block_given?? yield(job.body, job) : job.body
-        others.each { |other| other.put(record) } unless record.nil?
+        others.compact.each { |other| other.put(record) } unless record.nil?
       end
     end
     alias_method :>>, :connect
