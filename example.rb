@@ -19,7 +19,7 @@ consumer_in.connect(nil) do |data|
 end
 
 produce = Thread.new do
-  %w(This is some example data).each { |word| producer_out << word }
+  %w(THIS is SOME Example Data).each { |word| producer_out << word }
 end
 
 consume = Thread.new do

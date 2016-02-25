@@ -47,7 +47,7 @@ consumer_in.connect(nil) do |data|
 end
 
 produce = Thread.new do
-  %w(This is some example data).each { |word| producer_out << word }
+  %w(THIS is SOME Example Data).each { |word| producer_out << word }
 end
 
 consume = Thread.new do
@@ -62,18 +62,18 @@ Output:
 
 ```
 $ bundle exec ruby example.rb
-This
+THIS
 is
-some
-example
-data
+SOME
+Example
+Data
 this
 is
 some
 example
 data
-^Ctest.rb:30:in `join': Interrupt
-	from test.rb:30:in `<main>'
+^Cexample.rb:30:in `join': Interrupt
+	from example.rb:30:in `<main>'
 ```
 
 ## Contributing
