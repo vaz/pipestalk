@@ -6,7 +6,7 @@ module Pipestalk
               :transmit_to_all, :transmit_to_rand,
               :transmit_until_res] => :@pool
 
-    include Connection
+    include Base
 
     attr_reader :configuration, :pipes
 

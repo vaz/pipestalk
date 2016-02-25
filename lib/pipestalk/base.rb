@@ -1,5 +1,5 @@
 module Pipestalk
-  module Connection
+  module Base
     def pipes
       @_pipes ||= {}
     end

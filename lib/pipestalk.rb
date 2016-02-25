@@ -1,15 +1,14 @@
 require 'forwardable'
 require 'beaneater'
-#require 'active_support/all'
 require 'pipestalk/version'
 require 'pipestalk/pipe'
 require 'pipestalk/filter'
-require 'pipestalk/factory'
+require 'pipestalk/base'
 require 'pipestalk/connection_pool'
 require 'pipestalk/configuration'
 
 module Pipestalk
-  extend Connection
+  extend Base
 
   def self.connection
     @connection ||= ConnectionPool.new
